@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   const wikiImages = [
-    { src: "/images/nolan_portrait.jpg", alt: "Christopher Nolan Portrait", label: "The Visionary" },
+    { src: import.meta.env.BASE_URL + "images/nolan_portrait.jpg", alt: "Christopher Nolan Portrait", label: "The Visionary" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Christopher_Nolan%2C_London%2C_2013_%28crop%29.jpg", alt: "Christopher Nolan 2013", label: "London, 2013" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Christopher_Nolan_TCL.jpg", alt: "Christopher Nolan Handprints", label: "TCL Chinese Theatre" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Christopher_Nolan_and_Emma_Thomas.jpg", alt: "Christopher Nolan and Emma Thomas", label: "With Emma Thomas" },
@@ -15,7 +15,7 @@ const About = () => {
   const emojis = ['🏆', '🎬', '🌟', '🎥', '🎞️', '🎖️', '🏅', '🎭'];
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: '#0a0a0a', color: '#fff', padding: '10rem 5% 5rem' }}>
+    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: '#0a0a0a', color: '#fff', padding: 'clamp(6rem, 15vw, 10rem) 5% 5rem' }}>
       
       {/* Floating Emojis Background */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', zIndex: 0, pointerEvents: 'none', opacity: 0.15 }}>
@@ -52,7 +52,7 @@ const About = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ fontSize: '4rem', textAlign: 'center', marginBottom: '1rem', background: 'linear-gradient(45deg, #fff, #888)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', textAlign: 'center', marginBottom: '1rem', background: 'linear-gradient(45deg, #fff, #888)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
         >
           Sir Christopher Nolan
         </motion.h2>
@@ -67,7 +67,7 @@ const About = () => {
         </motion.p>
 
         {/* Introduction / Bio Section */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', marginBottom: '5rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem', marginBottom: '5rem', alignItems: 'center' }}>
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -109,7 +109,7 @@ const About = () => {
           >
             Cinematic Vision & Signature Style
           </motion.h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
             <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
               <h4 style={{ color: '#fff', marginBottom: '0.8rem', fontSize: '1.2rem' }}>Metaphysical Themes</h4>
               <p style={{ color: '#aaa', lineHeight: '1.6' }}>Infused with a metaphysical outlook, his works thematize epistemology, existentialism, ethics, the construction of time, and the malleable nature of memory and personal identity.</p>
@@ -133,7 +133,7 @@ const About = () => {
           style={{ marginBottom: '5rem' }}
         >
           <h3 style={{ color: 'var(--accent-color)', fontSize: '2rem', marginBottom: '2rem', fontFamily: 'var(--font-heading)', textAlign: 'center' }}>Legacy</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', textAlign: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))', gap: '1.5rem', textAlign: 'center' }}>
             {[
               { label: 'Academy Awards', value: '2', icon: '🏆' },
               { label: 'Golden Globes', value: '1', icon: '🌟' },
@@ -161,7 +161,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h3 style={{ color: 'var(--accent-color)', fontSize: '2rem', marginBottom: '2rem', fontFamily: 'var(--font-heading)', textAlign: 'center' }}>Life & Work</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1rem' }}>
             {wikiImages.slice(1).map((img, idx) => (
               <motion.div
                 key={idx}

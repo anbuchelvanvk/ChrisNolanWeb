@@ -1291,29 +1291,18 @@ const ImaxExclusives = () => {
             }}
           >
             <button 
+              className="modal-close-btn"
               onClick={() => setSelectedImage(null)} 
-              style={{ position: 'absolute', top: 30, right: 40, background: 'transparent', color: '#fff', border: 'none', fontSize: '3rem', cursor: 'pointer', zIndex: 10001 }}
             >
               &times;
             </button>
             
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', zIndex: 10 }}>
+            <div className="ratio-controls-container">
               {[{label: '70mm IMAX (1.43:1)', val: '1.43/1'}, {label: 'Digital IMAX (1.90:1)', val: '1.9/1'}, {label: 'Standard Crop (2.39:1)', val: '2.39/1'}].map(ratio => (
                 <button
                   key={ratio.val}
+                  className={`ratio-btn ${aspectRatio === ratio.val ? 'active' : ''}`}
                   onClick={() => setAspectRatio(ratio.val)}
-                  style={{
-                    padding: '10px 25px',
-                    background: aspectRatio === ratio.val ? 'var(--accent-color)' : 'transparent',
-                    color: aspectRatio === ratio.val ? '#000' : '#fff',
-                    border: '2px solid var(--accent-color)',
-                    borderRadius: '30px',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    transition: 'all 0.3s ease',
-                    textTransform: 'uppercase',
-                    fontSize: '0.8rem'
-                  }}
                 >
                   {ratio.label}
                 </button>
